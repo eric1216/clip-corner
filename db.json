@@ -1,0 +1,122 @@
+{
+  "users": [
+    { "id": "018f", "username": "fastman55", "password": "Noonewillguessthispassword1" },
+    { "id": "0an2", "username": "lordlandon301", "password": "TopSecretPassword7" },
+    { "id": "fn29f", "username": "mrintelligent007", "password": "Password123" }
+  ],
+  "clips": [
+    {
+      "id": "6dx3",
+      "title": "VICTORY ROYALE",
+      "description": "check out this insane W",
+      "video_url": "youtube.com/watch?v=VIDEO1",
+      "upload_date": "2024-05-20",
+      "user_id": "018f",
+      "game_id": "xgon"
+    },
+    {
+      "id": "9v3a",
+      "title": "crazy wicked window no scope",
+      "description": "mirage window no scope off spawn",
+      "video_url": "youtube.com/watch?v=VIDEO2",
+      "upload_date": "2024-11-21",
+      "user_id": "0an2",
+      "game_id": "jci7"
+    },
+    {
+      "id": "wdqz",
+      "title": "PENTA KILL!",
+      "description": "DOPA DOWN!",
+      "video_url": "youtube.com/watch?v=VIDEO3",
+      "upload_date": "2024-05-03",
+      "user_id": "018f",
+      "game_id": "r5wc"
+    },
+    {
+      "id": "dzbx",
+      "title": "CREEPER!",
+      "description": "OHHHH! MANNN!",
+      "video_url": "youtube.com/watch?v=VIDEO4",
+      "upload_date": "2024-07-15",
+      "user_id": "fn29f",
+      "game_id": "mntz"
+    },
+    {
+      "id": "b63v",
+      "title": "ITS DONE",
+      "description": "ender dragon down. ez pz.",
+      "video_url": "youtube.com/watch?v=VIDEO5",
+      "upload_date": "2024-01-24",
+      "user_id": "fn29f",
+      "game_id": "mntz"
+    },
+    {
+      "id": "ehw7",
+      "title": "warzone dub",
+      "description": "warzone dub",
+      "video_url": "youtube.com/watch?v=VIDEO6",
+      "upload_date": "2024-08-30",
+      "user_id": "0an2",
+      "game_id": "65yj"
+    },
+    {
+      "id": "tjjv",
+      "title": "clutched it up",
+      "description": "inferno 1v5 retake",
+      "video_url": "youtube.com/watch?v=VIDEO7",
+      "upload_date": "2024-12-01",
+      "user_id": "0an2",
+      "game_id": "jci7"
+    }
+  ],
+  "games": [
+    { "id": "xgon", "title": "fortnite" },
+    { "id": "mntz", "title": "minecraft" },
+    { "id": "65yj", "title": "call of duty: warzone" },
+    { "id": "jci7", "title": "counter strike 2" },
+    { "id": "r5wc", "title": "league of legends" }
+  ],
+  "groups": [
+    { "id": "667d", "name": "cool group", "group_password": "Password1234" },
+    { "id": "llq8", "name": "clips for all", "group_password": "YouAreTheChoosen1" },
+    { "id": "8umb", "name": "only w allowed", "group_password": "Password84" }
+  ],
+  "userGroupMembership": [
+    { "id": "a9xk", "user_id": "018f", "group_id": "667d" },
+    { "id": "2jae", "user_id": "0an2", "group_id": "667d" },
+    { "id": "osm1", "user_id": "fn29f", "group_id": "667d" },
+    { "id": "gy9k", "user_id": "018f", "group_id": "llq8" },
+    { "id": "aosg", "user_id": "018f", "group_id": "8umb" },
+    { "id": "2nh4", "user_id": "0an2", "group_id": "8umb" },
+    { "id": "1frj", "user_id": "fn29f", "group_id": "llq8" }
+  ],
+  "comments": [
+    {
+      "id": "c91i",
+      "clip_id": "6dx3",
+      "user_id": "fn29f",
+      "content": "W",
+      "comment_date": "2024-05-21"
+    },
+    {
+      "id": "hqyq",
+      "clip_id": "6dx3",
+      "user_id": "0an2",
+      "content": "W",
+      "comment_date": "2024-05-21"
+    },
+    {
+      "id": "q9wu",
+      "clip_id": "b63v",
+      "user_id": "018f",
+      "content": "ender dragon: 0, mrintelligent007: 1",
+      "comment_date": "2024-01-24"
+    }
+  ],
+  "likes": [
+    { "id": "8egb", "user_id": "0an2", "clip_id": "6dx3" },
+    { "id": "t9ws", "user_id": "fn29f", "clip_id": "6dx3" },
+    { "id": "jy3d", "user_id": "018f", "clip_id": "ehw7" },
+    { "id": "loal", "user_id": "018f", "clip_id": "b63v" }
+  ]
+}

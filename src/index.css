@@ -1,0 +1,32 @@
+:root {
+  --background-dark: #1E2124;
+  --popup-dark: #282B30;
+  --panel-dark: #36393E;
+  --hover-dark: #424549;
+  --blue: #7289DA;
+  --blue-hover: #4A5E9F;
+  --green: #35A55D;
+  --green-hover: #297F49;
+  --red: #F24042;
+  --white: #D9D9D9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--background-dark);
+  color: var(--white);
+}
+
+#root {
+  height: 100vh;
+  color-scheme: light dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

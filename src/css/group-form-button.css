@@ -1,0 +1,20 @@
+.group-form-button {
+  width: 2.5rem;
+  margin-top: 1rem;
+  min-height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--popup-dark);
+  color: var(--green);
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.group-form-button:hover {
+  background-color: var(--green);
+  color: var(--popup-dark);
+}

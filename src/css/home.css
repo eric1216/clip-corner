@@ -1,0 +1,57 @@
+.home-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home-left, .home-middle, .home-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.home-left, .home-right {
+  width: 15rem;
+  flex-shrink: 0;
+  ;
+}
+
+.home-left {
+  margin-left: 1rem;
+}
+
+.home-right {
+  margin-right: 1rem;
+}
+
+.home-middle {
+  width: 100%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.groups-container, .profile-container, .games-container, .clips-container, .users-container, .upload-container {
+  background-color: var(--panel-dark);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.groups-container, .users-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow: auto;
+}
+
+.profile-container, .upload-container {
+  height: 4rem;
+}
+
+.games-container {
+  height: 10rem;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}

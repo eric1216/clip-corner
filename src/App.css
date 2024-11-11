@@ -1,0 +1,30 @@
+.error-message {
+  font-size: 12px;
+  color: var(--red);
+}
+
+.search-bar {
+  width: 100%;
+  background-color: var(--panel-dark);
+  border: none;
+  border-radius: 1rem;
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.filter-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--panel-dark);
+}
+
+.filter-button:hover {
+  background-color: var(--hover-dark);
+  cursor: pointer;
+}
+
+.upload-container {
+  background-color: var(--green);
+}

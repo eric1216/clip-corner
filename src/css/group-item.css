@@ -1,0 +1,15 @@
+.group-item {
+  padding: 1rem;
+  user-select: none;
+}
+
+.group-item:hover {
+  background-color: var(--hover-dark);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.group-item.active-group {
+  background-color: var(--popup-dark);
+  border-radius: 1rem;
+}

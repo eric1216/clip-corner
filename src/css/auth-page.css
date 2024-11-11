@@ -1,0 +1,31 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* .auth-container input[type='submit'] {
+  border: none;
+  background-color: var(--blue);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-top: 0.25rem;
+}
+
+.auth-container input[type='submit']:hover {
+  cursor: pointer;
+  background-color: var(--blue-hover);
+} */

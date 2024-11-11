@@ -1,0 +1,34 @@
+.group-form-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.group-form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 100%;
+  background-color: var(--popup-dark);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 20rem;
+  min-height: 30rem;
+  max-height: auto;
+  text-align: center;
+}
+
+.group-form-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
