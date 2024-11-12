@@ -50,21 +50,15 @@ export const UsersProvider = ({ children }: { children: ReactNode }) => {
       setActiveUser(userData);
       localStorage.setItem('activeUser', JSON.stringify(userData));
       setLoginStatus(true);
-      queryClient.invalidateQueries({ queryKey: ['users'] });
+      queryClient.refetchQueries({ queryKey: ['users'] });
     },
   });
 
   useEffect(() => {
     const storedUser = localStorage.getItem('activeUser');
     if (storedUser) {
-      try {
-        setActiveUser(JSON.parse(storedUser));
-        setLoginStatus(true);
-      } catch (error) {
-        console.error("Error parsing 'activeUser' from localStorage:", error);
-        setActiveUser(null);
-        setLoginStatus(false);
-      }
+      setActiveUser(JSON.parse(storedUser));
+      setLoginStatus(true);
     } else {
       setActiveUser(null);
       setLoginStatus(false);

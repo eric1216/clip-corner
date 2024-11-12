@@ -7,11 +7,18 @@ import { UsersSection } from '../layouts/UsersSection';
 import { SearchBar } from '../components/SearchBarComponent';
 import { FilterButton } from '../components/FilterButtonComponent';
 import '../css/home.css';
+import { useGroups } from '../Providers/GroupsProvider';
+import { useUserGroupMembership } from '../Providers/UserGroupMembershipProvider';
 
 export function HomePage() {
+  const { areGroupsLoading } = useGroups();
+  const { areMembershipsLoading } = useUserGroupMembership();
+
+  if (areGroupsLoading || areMembershipsLoading) return 'LOGGING IN PLEASE SIT TIGHT';
+
   return (
     <>
-      <h1>clip corner</h1>
+      <h1 className='logo'>Clip Corner</h1>
       <div className='home-container'>
         <div className='home-left'>
           <GroupsSection />

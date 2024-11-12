@@ -35,6 +35,7 @@ export const UserGroupMembershipProvider = ({ children }: { children: ReactNode 
       return Requests.postItem('userGroupMembership', newMembership);
     },
     onSuccess: () => {
+      queryClient.refetchQueries({ queryKey: ['users'] });
       queryClient.refetchQueries({ queryKey: ['userGroupMembership'] });
       queryClient.refetchQueries({ queryKey: ['groups'] });
     },

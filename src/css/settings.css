@@ -1,0 +1,12 @@
+.cogwheel-container {
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  transition: transform 0.7s ease;
+  user-select: none;
+}
+
+.cogwheel-container:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+}

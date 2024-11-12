@@ -1,7 +1,7 @@
 import { HomePage } from './pages/HomePage';
 import { AuthPage } from './pages/AuthPage';
-import './App.css';
 import { useUsers } from './Providers/UsersProvider';
+import './App.css';
 
 function App() {
   const { loginStatus, areUsersLoading, usersError } = useUsers();

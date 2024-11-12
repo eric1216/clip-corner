@@ -19,7 +19,7 @@ type TGroupsContext = {
   groupsError: unknown;
   postGroup: (newGroup: Partial<TGroups>) => void;
   activeGroup: string;
-  changeActiveGroup: (groupId: string) => void;
+  setActiveGroup: Dispatch<SetStateAction<string>>;
   showGroupFormPage: boolean;
   setShowGroupFormPage: Dispatch<SetStateAction<boolean>>;
   doesGroupExist: (groupName: string) => boolean;
@@ -32,15 +32,11 @@ const GroupsContext = createContext<TGroupsContext>({} as TGroupsContext);
 
 export const GroupsProvider = ({ children }: { children: ReactNode }) => {
   const queryClient = useQueryClient();
-  const { generateUserMembership, checkForExistingMembership } = useUserGroupMembership();
+  const { memberships, generateUserMembership, checkForExistingMembership } =
+    useUserGroupMembership();
   const { activeUser, loginStatus } = useUsers();
   const [activeGroup, setActiveGroup] = useState<string>('');
   const [showGroupFormPage, setShowGroupFormPage] = useState<boolean>(false);
-
-  const changeActiveGroup = (groupId: string) => {
-    setActiveGroup(groupId);
-    localStorage.setItem('activeGroup', groupId);
-  };
 
   const {
     data: groups = [],
@@ -52,28 +48,45 @@ export const GroupsProvider = ({ children }: { children: ReactNode }) => {
     enabled: loginStatus,
   });
 
-  useEffect(() => {
-    if (!areGroupsLoading) {
-      const storedGroupId = localStorage.getItem('activeGroup');
-      if (storedGroupId) {
-        setActiveGroup(storedGroupId);
-      } else if (groups.length > 0) {
-        setActiveGroup(groups[0].id);
-      }
-    }
-  }, [areGroupsLoading, groups]);
-
   const postGroup = useMutation({
     mutationFn: (newGroup: Partial<TGroups>) => {
       return Requests.postItem('groups', newGroup);
     },
     onSuccess: (data) => {
       generateUserMembership({ user_id: activeUser?.id, group_id: data.id });
-      changeActiveGroup(data.id);
+      setActiveGroup(data.id);
+      localStorage.setItem('activeGroup', data.id);
       queryClient.refetchQueries({ queryKey: ['userGroupMembership'] });
       queryClient.refetchQueries({ queryKey: ['groups'] });
     },
   });
+
+  useEffect(() => {
+    if (areGroupsLoading) return;
+
+    const storedGroupId = localStorage.getItem('activeGroup');
+
+    const getFirstEligibleGroupId = () => {
+      return (
+        groups
+          .filter((group: TGroups) =>
+            memberships.some(
+              (membership) =>
+                membership.user_id === activeUser?.id && membership.group_id === group.id
+            )
+          )
+          .sort((a: TGroups, b: TGroups) => a.name.localeCompare(b.name))
+          .map((group: TGroups) => group.id)[0] || null
+      );
+    };
+
+    const activeGroupId = storedGroupId || getFirstEligibleGroupId();
+
+    if (activeGroupId) {
+      setActiveGroup(activeGroupId);
+      if (!storedGroupId) localStorage.setItem('activeGroup', activeGroupId);
+    }
+  }, [memberships, groups, setActiveGroup, areGroupsLoading, activeUser?.id]);
 
   const doesGroupExist = (groupName: string) => {
     return groups.some((group: TGroups) => group.name === groupName);
@@ -93,7 +106,8 @@ export const GroupsProvider = ({ children }: { children: ReactNode }) => {
   const addUserToGroup = (groupName: string) => {
     const matchingGroup = groups.find((group: TGroups) => group.name === groupName);
     generateUserMembership({ user_id: activeUser?.id, group_id: matchingGroup?.id });
-    changeActiveGroup(matchingGroup.id);
+    setActiveGroup(matchingGroup.id);
+    localStorage.setItem('activeGroup', matchingGroup.id);
   };
 
   return (
@@ -104,7 +118,7 @@ export const GroupsProvider = ({ children }: { children: ReactNode }) => {
         groupsError,
         postGroup: postGroup.mutate,
         activeGroup,
-        changeActiveGroup,
+        setActiveGroup,
         showGroupFormPage,
         setShowGroupFormPage,
         doesGroupExist,
