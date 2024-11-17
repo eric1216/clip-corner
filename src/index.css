@@ -21,12 +21,13 @@ body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--background-dark);
   color: var(--white);
+  height: 100vh;
 }
 
 #root {
-  height: 100vh;
+  height: 100%;
   color-scheme: light dark;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
 }

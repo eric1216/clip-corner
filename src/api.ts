@@ -25,12 +25,12 @@ function postItem<T>(endpoint: string, newGroup: Partial<T>): Promise<T> {
     });
 }
 
-function deleteItem(endpoint: string, id: string) {
+function deleteItem<T>(endpoint: string, id: string): Promise<T> {
   return axiosInstance
     .delete(`/${endpoint}/${id}`)
     .then((response) => response.data)
     .catch((error) => {
-      console.log('Could not delete');
+      console.log('Could not delete data: ', error.message);
       throw error;
     });
 }

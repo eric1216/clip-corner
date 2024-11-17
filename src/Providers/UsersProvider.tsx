@@ -27,7 +27,7 @@ type TUsersContext = {
 
 const UsersContext = createContext<TUsersContext>({} as TUsersContext);
 
-export const UsersProvider = ({ children }: { children: ReactNode }) => {
+export function UsersProvider({ children }: { children: ReactNode }) {
   const queryClient = useQueryClient();
   const [loginStatus, setLoginStatus] = useState(false);
   const [activeUser, setActiveUser] = useState<{ id: string; username: string } | null>(null);
@@ -108,7 +108,7 @@ export const UsersProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </UsersContext.Provider>
   );
-};
+}
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useUsers = () => useContext(UsersContext);

@@ -1,7 +1,9 @@
+import { ClipItemComponent } from '../components/ClipItemComponent';
+
 export function ClipsSection() {
   return (
     <div className='clips-container'>
-      <h1>Clips</h1>
+      <ClipItemComponent />
     </div>
   );
 }

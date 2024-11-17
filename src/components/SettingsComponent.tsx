@@ -1,5 +1,4 @@
 import cogwheel from '/cogwheel.svg';
-import { PopupMenuComponent } from './PopupMenuComponent';
 import { useState } from 'react';
 import '../css/settings.css';
 import { useUsers } from '../Providers/UsersProvider';
@@ -9,6 +8,7 @@ export function SettingsComponent() {
   const { setLoginStatus } = useUsers();
   const { setActiveGroup } = useGroups();
   const [isPopupVisible, setPopupVisible] = useState<boolean>(false);
+  const options = ['Log Out'];
 
   const handleIconClick = () => {
     setPopupVisible(!isPopupVisible);
@@ -24,17 +24,27 @@ export function SettingsComponent() {
     setPopupVisible(false);
   };
 
-  const options = ['Log Out'];
+  const handleMouseLeave = () => {
+    setPopupVisible(false);
+  };
 
   return (
     <div style={{ position: 'relative' }}>
       <img src={cogwheel} className='cogwheel-container' alt='settings' onClick={handleIconClick} />
       {isPopupVisible && (
-        <PopupMenuComponent
-          options={options}
-          onOptionClick={handleOptionClick}
-          setPopupVisible={setPopupVisible}
-        />
+        <div className='settings-popup-menu' onMouseLeave={handleMouseLeave}>
+          <ul>
+            {options.map((option, index) => (
+              <li
+                key={index}
+                onClick={() => handleOptionClick(option)}
+                style={option === 'Log Out' ? { color: '#F24042' } : {}}
+              >
+                {option}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

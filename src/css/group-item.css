@@ -13,3 +13,39 @@
   background-color: var(--popup-dark);
   border-radius: 1rem;
 }
+
+.group-popup-menu {
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: var(--popup-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 1;
+}
+
+.group-popup-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.group-popup-menu li {
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.group-popup-menu li:hover {
+  background-color: var(--hover-dark);
+}
+
+.group-popup-menu::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid var(--popup-dark);
+}

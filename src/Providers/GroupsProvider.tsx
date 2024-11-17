@@ -26,6 +26,7 @@ type TGroupsContext = {
   isGroupPasswordCorrect: (groupName: string, groupPassword: string) => boolean;
   isUserAlreadyMember: (groupName: string) => boolean;
   addUserToGroup: (groupName: string) => void;
+  leaveGroup: (groupId: string) => void;
 };
 
 const GroupsContext = createContext<TGroupsContext>({} as TGroupsContext);
@@ -58,6 +59,20 @@ export const GroupsProvider = ({ children }: { children: ReactNode }) => {
       localStorage.setItem('activeGroup', data.id);
       queryClient.refetchQueries({ queryKey: ['userGroupMembership'] });
       queryClient.refetchQueries({ queryKey: ['groups'] });
+    },
+  });
+
+  const leaveGroup = useMutation({
+    mutationFn: (groupId: string) => {
+      const membershipIdToLRemove = memberships.find(
+        (membership) => membership.group_id === groupId && membership.user_id === activeUser!.id
+      );
+      return Requests.deleteItem('userGroupMembership', membershipIdToLRemove!.id);
+    },
+    onSuccess: () => {
+      setActiveGroup('');
+      localStorage.removeItem('activeGroup');
+      queryClient.refetchQueries({ queryKey: ['userGroupMembership'] });
     },
   });
 
@@ -125,6 +140,7 @@ export const GroupsProvider = ({ children }: { children: ReactNode }) => {
         isGroupPasswordCorrect,
         isUserAlreadyMember,
         addUserToGroup,
+        leaveGroup: leaveGroup.mutate,
       }}
     >
       {children}

@@ -1,6 +1,10 @@
 .home-container {
   display: flex;
-  justify-content: space-evenly;
+  height: 100%;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
+  overflow: auto;
 }
 
 .home-left, .home-middle, .home-right {
@@ -12,24 +16,14 @@
 .home-left, .home-right {
   width: 15rem;
   flex-shrink: 0;
-  ;
-}
-
-.home-left {
-  margin-left: 1rem;
-}
-
-.home-right {
-  margin-right: 1rem;
+  height: 100%;
 }
 
 .home-middle {
   width: 100%;
-  margin-right: 1rem;
-  margin-left: 1rem;
 }
 
-.groups-container, .profile-container, .games-container, .clips-container, .users-container, .upload-container {
+.groups-container, .profile-container, .games-container, .users-container, .upload-container {
   background-color: var(--panel-dark);
   padding: 1rem;
   border-radius: 1rem;
@@ -39,7 +33,7 @@
 .groups-container, .users-container {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 100%;
   overflow: auto;
 }
 
@@ -54,7 +48,17 @@
 }
 
 .games-container {
-  height: 10rem;
+  min-height: 10rem;
+}
+
+.clips-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  overflow: auto;
 }
 
 .search-container {
@@ -64,7 +68,7 @@
 }
 
 .logo {
-  margin-left: 1rem;
+  padding: 0.5rem;
 }
 
 .section-title {

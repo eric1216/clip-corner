@@ -3,7 +3,7 @@ import { JoinGroupComponent } from '../components/JoinGroupComponent';
 import { CreateGroupComponent } from '../components/CreateGroupComponent';
 import { ToggleModeButton } from '../components/ToggleModeButtonComponent';
 import { useGroups } from '../Providers/GroupsProvider';
-import '../css/group-form-page.css';
+import '../css/modal-page.css';
 
 export function GroupFormPage() {
   const [joinGroupMode, setJoinGroupMode] = useState(true);
