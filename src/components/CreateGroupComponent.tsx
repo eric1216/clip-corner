@@ -53,6 +53,11 @@ export function CreateGroupComponent() {
         To create your own group, enter a unique name and a password that others can use to join.
       </p>
       <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.5rem',
+        }}
         onSubmit={(e) => {
           handleSubmit(e);
         }}

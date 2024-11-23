@@ -10,8 +10,8 @@ export function GroupFormPage() {
   const { setShowGroupFormPage } = useGroups();
 
   return (
-    <div className='group-form-window' onClick={() => setShowGroupFormPage(false)}>
-      <div className='group-form-content' onClick={(e) => e.stopPropagation()}>
+    <div className='modal-window' onClick={() => setShowGroupFormPage(false)}>
+      <div className='modal-content' onClick={(e) => e.stopPropagation()}>
         {joinGroupMode ? <JoinGroupComponent /> : <CreateGroupComponent />}
         <ToggleModeButton
           onClick={() => {

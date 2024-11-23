@@ -1,4 +1,4 @@
-.group-form-window {
+.modal-window {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
   z-index: 100;
 }
 
-.group-form-content {
+.modal-content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -25,10 +25,4 @@
   width: 20rem;
   min-height: 30rem;
   text-align: center;
-}
-
-.group-form-content form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }

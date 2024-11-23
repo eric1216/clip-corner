@@ -56,6 +56,11 @@ export function JoinGroupComponent() {
       <h1>Join a Group!</h1>
       <p>Enter the name and password of an existing group to join!</p>
       <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.5rem',
+        }}
         onSubmit={(e) => {
           handleSubmit(e);
         }}
