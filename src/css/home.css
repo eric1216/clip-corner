@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-.groups-container, .profile-container, .games-container, .users-container, .upload-container {
+.groups-container, .profile-container, .games-container, .users-container {
   background-color: var(--panel-dark);
   padding: 1rem;
   border-radius: 1rem;
@@ -39,12 +39,6 @@
 
 .profile-container, .upload-container {
   height: 4rem;
-}
-
-.profile-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .games-container {

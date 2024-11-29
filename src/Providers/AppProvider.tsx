@@ -4,6 +4,7 @@ import { UserGroupMembershipProvider } from './UserGroupMembershipProvider';
 import { UsersProvider } from './UsersProvider';
 import { ClipsProvider } from './ClipsProvider';
 import { LikesProvider } from './LikesProvider';
+import { CommentsProvider } from './CommentsProvider';
 
 export const AppProviders = ({ children }: { children: ReactNode }) => {
   return (
@@ -11,7 +12,9 @@ export const AppProviders = ({ children }: { children: ReactNode }) => {
       <UserGroupMembershipProvider>
         <GroupsProvider>
           <ClipsProvider>
-            <LikesProvider>{children}</LikesProvider>
+            <CommentsProvider>
+              <LikesProvider>{children}</LikesProvider>
+            </CommentsProvider>
           </ClipsProvider>
         </GroupsProvider>
       </UserGroupMembershipProvider>

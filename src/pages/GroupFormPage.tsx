@@ -11,7 +11,14 @@ export function GroupFormPage() {
 
   return (
     <div className='modal-window' onClick={() => setShowGroupFormPage(false)}>
-      <div className='modal-content' onClick={(e) => e.stopPropagation()}>
+      <div
+        className='modal-content'
+        style={{
+          width: '20rem',
+          minHeight: '30rem',
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {joinGroupMode ? <JoinGroupComponent /> : <CreateGroupComponent />}
         <ToggleModeButton
           onClick={() => {

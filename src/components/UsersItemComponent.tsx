@@ -14,7 +14,6 @@ export function UserItemComponent() {
 
   const usersInGroup = memberships
     .filter((member) => member.group_id === activeGroup)
-    .sort((a, b) => a.user_id.localeCompare(b.user_id))
     .map((member) => member.user_id);
 
   const sortedUsers = users

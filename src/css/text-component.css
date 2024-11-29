@@ -1,3 +1,7 @@
+.input-wrap {
+  width: 100%;
+}
+
 .input-wrap input {
   border: none;
   background-color: var(--panel-dark);
@@ -5,4 +9,9 @@
   padding: 0.5rem;
   border-radius: 1rem;
   margin-top: 0.25rem;
+  user-select: none;
+}
+
+.input-wrap input:focus {
+  outline: 2px solid var(--blue)
 }

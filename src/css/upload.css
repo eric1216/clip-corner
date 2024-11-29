@@ -1,0 +1,32 @@
+.upload-container {
+  display: flex;
+  border-radius: 1rem;
+  width: 100%;
+  background-color: var(--green);
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.upload-button:hover {
+  cursor: pointer;
+  background-color: var(--green-hover);
+}
+
+.upload-text {
+  font-size: 1.3rem
+}
+
+.upload-icon-container {
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  user-select: none;
+}

@@ -7,10 +7,9 @@ export const isPasswordStrong = (input: string) => {
   return /^(?=.*[A-Z])(?=.*\d).{3,}$/.test(input);
 };
 
-// export const isYoutubeLinkValid = (input: string) => {
-//   const regex =
-//   /(http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?)/
-//   ;
-//   const match = input.match(regex);
-//   return match ? match[1] : null;
-// };
+export const isValidYouTubeURL = (input: string) => {
+  return input.match(
+    // eslint-disable-next-line no-useless-escape
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+  );
+};

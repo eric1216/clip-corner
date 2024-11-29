@@ -19,7 +19,3 @@
   background-color: var(--hover-dark);
   cursor: pointer;
 }
-
-.upload-container {
-  background-color: var(--green);
-}

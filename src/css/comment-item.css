@@ -1,0 +1,30 @@
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  height: 29rem;
+  max-height: 29rem;
+  overflow: auto;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.comment-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-date {
+  font-size: 0.7rem;
+}
+
+.comment-item p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
