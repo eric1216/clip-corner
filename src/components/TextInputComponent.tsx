@@ -1,6 +1,6 @@
 import { ErrorMessage } from './ErrorMessageComponent';
 import { TTextComponent } from '../types';
-import '../css/text-component.css';
+import '../css/text-input-component.css';
 
 export function TextInputComponent({
   labelText,
